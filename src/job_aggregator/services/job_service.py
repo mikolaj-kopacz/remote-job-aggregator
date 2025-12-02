@@ -1,9 +1,11 @@
 from sqlmodel import Session, select
+
 from src.job_aggregator.db.engine import engine
-from src.job_aggregator.db.models import Job, Company
+from src.job_aggregator.db.models import Company, Job
+from src.job_aggregator.scrapers.arbeitnow import ArbeitnowScraper
+
 # Import both scrapers
 from src.job_aggregator.scrapers.remoteok import RemoteOKScraper
-from src.job_aggregator.scrapers.arbeitnow import ArbeitnowScraper
 
 
 def sync_jobs():
@@ -35,7 +37,7 @@ def sync_jobs():
                     new_company = Company(
                         name=company_name,
                         logo_url=job_data.get("company_logo"),
-                        url=None
+                        url=None,
                     )
                     session.add(new_company)
                     session.commit()
@@ -54,7 +56,7 @@ def sync_jobs():
                     company_id=company_id,
                     salary_min=job_data.get("salary_min"),
                     salary_max=job_data.get("salary_max"),
-                    currency="USD"
+                    currency="USD",
                 )
 
                 session.add(new_job)
