@@ -24,6 +24,7 @@ def run():
             })
 
         df = pd.DataFrame(data)
+        df.index += 1
         st.dataframe(
             df,
             use_container_width=True,
