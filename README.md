@@ -33,7 +33,7 @@ The system follows a modern **src layout** and consists of three layers:
 ### Installation
 1.  Clone the repository:
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/remote-job-aggregator.git](https://github.com/YOUR_USERNAME/remote-job-aggregator.git)
+    git clone [https://github.com/mikolaj-kopacz/remote-job-aggregator.git](https://github.com/mikolaj-kopacz/remote-job-aggregator.git)
     cd remote-job-aggregator
     ```
 
